@@ -7,6 +7,9 @@
 #   copyright and license terms.
 #
 # ## ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
+
+# From https://github.com/psychoinformatics-de/remodnav:
+
 import numpy as np
 from statsmodels.robust.scale import mad
 from scipy import signal
@@ -911,8 +914,8 @@ class EyegazeClassifier(object):
         fix = self.parse_fixations(events)
         
         # draw circles
-        ax.scatter(fix['x'],fix['y'], s=fix['duration'], c=col, marker='o', cmap='jet', alpha=alpha, edgecolors='none')
-
+        #ax.scatter(fix['x'],fix['y'], s=fix['duration'], c=col, marker='o', cmap='jet', alpha=alpha, edgecolors='none')
+        ax.scatter(fix['x'],fix['y'], s=fix['duration'], marker='o', cmap='jet', edgecolors='none')
         # FINISH PLOT
         # invert the y axis, as (0,0) is top left on a display
         ax.invert_yaxis()
